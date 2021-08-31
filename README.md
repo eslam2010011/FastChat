@@ -52,15 +52,13 @@ public class BaseApplication extends MultiDexApplication {
         
        //Show or hide the info button 
         uiConfig.setInfoView(true);
-        
-        uiConfig.setBottomView(true);
-        
+                
         //Change all button colors
         uiConfig.setColorGeneral("#3D51FE");
-        //activate the reaction 
+        //activate  reaction 
          uiConfig.setIncludeReactions(true);
-         //https://emojipedia.org/facebook/
-         //default reaction
+
+          //default reaction
           uiConfig.setReactions(Reaction.getReactions());
 
          // add more reaction 
@@ -81,7 +79,12 @@ public class BaseApplication extends MultiDexApplication {
 
 Step 2 : Create User.
 ```java
-        FastChat.getFastChat().getChatInteract().createUser("1", "Eslam");
+        FastChat.getFastChat().getChatInteract().createUser("user_id", "userName");
+        
+        //Or
+        
+      FastChat.getFastChat().getChatInteract().createUser(new User("userName","userId","userProfile","userEmail"));
+
 ```
 
 Step 3 : Get Conversation.
