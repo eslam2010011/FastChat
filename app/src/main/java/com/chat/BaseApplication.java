@@ -33,12 +33,16 @@ public class BaseApplication extends MultiDexApplication {
         uiConfig.setColorGeneral("#3D51FE");
         uiConfig.setBackgroundChat(R.drawable.chat_bg);
         uiConfig.setIncludeReactions(true);
+        List<Reaction> list=new ArrayList<>();
+        list.add(new Reaction("url_reaction","Key_reaction"));
         uiConfig.setReactions(Reaction.getReactions());
+        uiConfig.setReactions(list);
         FastChat.init(this, uiConfig,new NotificationContractorX());
 
 
         // FastChat.getFastCache().setChatInteract(new ChatInteract());
         FastChat.getFastChat().getChatInteract().createUser("1", "Eslam");
+
 
 
 
