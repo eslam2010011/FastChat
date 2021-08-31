@@ -31,10 +31,8 @@
 
 
 # Usage
-Step 1 : The best place to initialize the Chat SDK is in the onCreate method of your Application subclass.
+Step 1 : The best place to initialize the Fast Chat is in the onCreate method of your Application subclass.
 ```java
-
-
 public class BaseApplication extends MultiDexApplication {
 
     @Override
@@ -56,6 +54,21 @@ public class BaseApplication extends MultiDexApplication {
     }
 }
 ```
+
+   . UiConfig
+       . Show or hide the video button from entering the chat
+   ```java
+           uiConfig.setButtonVideo(true);
+    ```
+    
+     . Show or hide the voice button from entering the chat
+   ```java
+           uiConfig.setButtonVoice(true);
+    ```
+     . Show or hide the info button from entering the chat
+   ```java
+           uiConfig.setInfoView(true);
+    ```
 
 
 
