@@ -83,6 +83,8 @@ public class FastChat {
         intent.putExtra("receiverId", receiverId);
         intent.putExtra("groupId", Chat.getChatChild(userId, receiverId));
         context.startActivity(intent);
+
+
     }
 
   /*  public static Intent ChatActivityIntent(Context context, String userId, String receiverId) {

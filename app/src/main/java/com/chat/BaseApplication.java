@@ -44,11 +44,5 @@ public class BaseApplication extends MultiDexApplication {
         FastChat.getFastChat().getChatInteract().createUser("1", "Eslam");
 
 
-
-
-        // Initialize the Chat SDK
-
-
-
     }
 }
