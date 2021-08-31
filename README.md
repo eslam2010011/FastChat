@@ -68,6 +68,8 @@ public class BaseApplication extends MultiDexApplication {
          List<Reaction> list=new ArrayList<>();
         list.add(new Reaction("url_reaction","Key_reaction"));
         
+        uiConfig.setReactions(list);
+        
         FastChat.init(this, uiConfig,new NotificationContractorX());
 
 
