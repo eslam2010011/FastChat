@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.1'
     implementation 'com.firebaseui:firebase-ui-database:6.3.0'
 
-    implementation 'com.github.eslam2010011:FastChat:v1.3'
+    implementation 'com.github.eslam2010011:FastChat:v1.4'
 
   // implementation project(path: ':FastChat')
     testImplementation 'junit:junit:4.+'

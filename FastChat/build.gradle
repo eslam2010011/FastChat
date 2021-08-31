@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
 }
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'
+group = 'com.fastchat'
 
 
 android {
@@ -72,3 +74,4 @@ dependencies {
     api project(path: ':FastPermissions')
 
 }
+apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
