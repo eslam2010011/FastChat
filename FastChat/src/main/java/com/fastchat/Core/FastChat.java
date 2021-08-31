@@ -48,11 +48,11 @@ public class FastChat {
         FastChat.chatInteract = chatInteract;
         FastChat.notificationContractor = notificationContractor;
         FirebaseApp.initializeApp(context);
-        EmojiManager.install(new TwitterEmojiProvider());
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         VideoViewManager.setConfig(VideoViewConfig.newBuilder()
                 .setPlayerFactory(ExoMediaPlayerFactory.create())
                 .build());
+                EmojiManager.install(new TwitterEmojiProvider());
         //https://stackoverflow.com/questions/56989569/how-to-fix-java-lang-noclassdeffounderror-in-android-aar-project
 
     }
