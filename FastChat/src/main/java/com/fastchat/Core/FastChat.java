@@ -53,6 +53,7 @@ public class FastChat {
         VideoViewManager.setConfig(VideoViewConfig.newBuilder()
                 .setPlayerFactory(ExoMediaPlayerFactory.create())
                 .build());
+        //https://stackoverflow.com/questions/56989569/how-to-fix-java-lang-noclassdeffounderror-in-android-aar-project
 
     }
 

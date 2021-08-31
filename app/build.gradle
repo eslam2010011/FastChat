@@ -41,10 +41,14 @@ dependencies {
 
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
+    implementation 'com.google.firebase:firebase-firestore:23.0.3'
+    implementation 'com.google.firebase:firebase-storage:19.2.2'
+    implementation 'com.google.firebase:firebase-database:20.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:6.3.0'
 
-   // implementation 'com.github.eslam2010011:FastChat:v1.2'
+    implementation 'com.github.eslam2010011:FastChat:v1.3'
 
-   implementation project(path: ':FastChat')
+  // implementation project(path: ':FastChat')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
