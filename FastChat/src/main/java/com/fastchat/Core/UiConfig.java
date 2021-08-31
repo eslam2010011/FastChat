@@ -23,6 +23,11 @@ public class UiConfig {
 
     public boolean IncludeReactions = true;
 
+    public boolean IncludeEmoji = false;
+
+    public boolean IncludeVideo = false;
+
+
 
     public String colorGeneral = null;
 
@@ -59,6 +64,21 @@ public class UiConfig {
         this.colorGeneral = colorGeneral;
     }
 
+    public boolean isIncludeEmoji() {
+        return IncludeEmoji;
+    }
+
+    public void setIncludeEmoji(boolean includeEmoji) {
+        IncludeEmoji = includeEmoji;
+    }
+
+    public boolean isIncludeVideo() {
+        return IncludeVideo;
+    }
+
+    public void setIncludeVideo(boolean includeVideo) {
+        IncludeVideo = includeVideo;
+    }
 
     public void setColorRightMeMessage(int colorRightMeMessage) {
         this.colorRightMeMessage = colorRightMeMessage;

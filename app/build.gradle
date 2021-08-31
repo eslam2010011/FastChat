@@ -35,6 +35,18 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.multidex:multidex:2.0.1'
 
+    //
+    api 'androidx.emoji:emoji-appcompat:1.1.0'
+    api 'com.vanniktech:emoji-twitter:0.7.0'
+
+
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-java:3.2.6'
+
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:3.2.6'
+
+    implementation 'com.github.dueeeke.dkplayer:player-exo:3.2.6'
+
+    implementation 'com.github.dueeeke.dkplayer:videocache:3.2.6'
 
     //RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
@@ -46,7 +58,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.1'
     implementation 'com.firebaseui:firebase-ui-database:6.3.0'
 
-    implementation 'com.github.eslam2010011:FastChat:v1.5'
+    implementation 'com.github.eslam2010011:FastChat:v1.7'
 
   // implementation project(path: ':FastChat')
     testImplementation 'junit:junit:4.+'

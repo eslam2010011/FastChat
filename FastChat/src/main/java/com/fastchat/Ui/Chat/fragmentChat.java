@@ -455,14 +455,17 @@ public class fragmentChat extends Fragment {
                     returnValue = data.getStringArrayListExtra(Pix.IMAGE_RESULTS);
                 }
                 if (new File(returnValue.get(0).toString()).getAbsolutePath().endsWith("mp4")) {
-                    FastChat.getFastChat().getChatInteract().sendMediaMessage(groupId, new File(returnValue.get(0).toString()), FastChatConstants.MESSAGE_TYPE_VIDEO, receiverId, userId, new Chat.CallbackListener() {
-                        @Override
-                        public void onSuccess(BaseMessage textMessage) {
-                            MediaUtils.playSendSound(getActivity(), R.raw.outgoing_message);
-                            scrollToBottom();
-                            SendNotification(receiverId, (MediaMessage) textMessage);
-                        }
-                    });
+                    if (FastChat.getUiConfig().isIncludeVideo()){
+                        FastChat.getFastChat().getChatInteract().sendMediaMessage(groupId, new File(returnValue.get(0).toString()), FastChatConstants.MESSAGE_TYPE_VIDEO, receiverId, userId, new Chat.CallbackListener() {
+                            @Override
+                            public void onSuccess(BaseMessage textMessage) {
+                                MediaUtils.playSendSound(getActivity(), R.raw.outgoing_message);
+                                scrollToBottom();
+                                SendNotification(receiverId, (MediaMessage) textMessage);
+                            }
+                        });
+                    }
+
                 } else {
                     FastChat.getFastChat().getChatInteract().sendMediaMessage(groupId, new File(returnValue.get(0).toString()), FastChatConstants.MESSAGE_TYPE_IMAGE, receiverId, userId, new Chat.CallbackListener() {
                         @Override

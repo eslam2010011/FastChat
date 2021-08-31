@@ -168,6 +168,7 @@ public class ComposeBox extends RelativeLayout implements View.OnClickListener {
         richLinkView = this.findViewById(R.id.richLink);
 
 
+
         resend_image = view.findViewById(R.id.resend_image);
         tv_resend_name = view.findViewById(R.id.tv_resend_name);
         resend_type = view.findViewById(R.id.resend_type);
