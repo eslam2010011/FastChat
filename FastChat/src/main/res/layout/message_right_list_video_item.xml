@@ -80,7 +80,7 @@
                     android:layout_height="15dp"/>
             </RelativeLayout>
 
-            <com.app.adprogressbarlib.AdCircleProgress
+            <com.fastchat.widget.adprogressbarlib.AdCircleProgress
                 android:id="@+id/img_progress_bar"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -90,11 +90,11 @@
                 android:backgroundTintMode="add"
                 app:adpgb_finished_color="@android:color/white"
                 app:adpgb_unfinished_color="@android:color/holo_red_light"
-                custom:adpgb_finished_stroke_width="5dp"
+                app:adpgb_finished_stroke_width="5dp"
                 app:adpgb_text_size="12dp"
-                custom:adpgb_show_text="true"
+                app:adpgb_show_text="true"
                 app:adpgb_text_color="@android:color/holo_red_light"
-                custom:adpgb_unfinished_stroke_width="5dp" />
+                app:adpgb_unfinished_stroke_width="5dp" />
 
 
         </androidx.cardview.widget.CardView>

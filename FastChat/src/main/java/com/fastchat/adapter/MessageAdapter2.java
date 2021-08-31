@@ -32,8 +32,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.app.adprogressbarlib.AdCircleProgress;
-import com.bumptech.glide.Glide;
+ import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
@@ -65,6 +64,7 @@ import com.fastchat.utils.ZoomIv;
 import com.fastchat.widget.AudioVisualizer.audio.AudioView;
 import com.fastchat.widget.AudioVisualizer.audio.AudioWaveSeekBar;
 import com.fastchat.widget.Avatar;
+import com.fastchat.widget.adprogressbarlib.AdCircleProgress;
 import com.fastchat.widget.exo.ExoMediaSourceHelper;
 import com.fastchat.widget.exo.ExoVideoView;
 import com.fastchat.widget.richlinkpreview.RichLinkView;

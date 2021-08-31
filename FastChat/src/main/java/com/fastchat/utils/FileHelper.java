@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.app.adprogressbarlib.AdCircleProgress;
-import com.bumptech.glide.Glide;
+ import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
@@ -24,6 +23,7 @@ import com.fastchat.R;
 import com.fastchat.chat_interactore.Chat;
 import com.fastchat.utils.FirebaseUpload.FileUploadResult;
 import com.fastchat.utils.FirebaseUpload.ParseFileUtils;
+import com.fastchat.widget.adprogressbarlib.AdCircleProgress;
 import com.fastchat.widget.exo.ExoVideoView;
 import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.google.android.gms.tasks.OnCompleteListener;

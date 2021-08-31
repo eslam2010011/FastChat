@@ -7,11 +7,22 @@ apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -53,7 +64,7 @@ dependencies {
 
     implementation 'com.github.dueeeke.dkplayer:videocache:3.2.6'
 
-    implementation 'com.github.Adilhusen:circle-progress-ad-android-:1.0'
+  //  implementation 'com.github.Adilhusen:circle-progress-ad-android-:1.0'
     implementation  'com.fxn769:pix:1.5.3'
 
     implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
@@ -67,7 +78,7 @@ dependencies {
     implementation 'com.vanniktech:emoji-twitter:0.7.0'
     api project(path: ':FastPermissions')
 
-//    testImplementation 'junit:junit:4.+'
-//    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

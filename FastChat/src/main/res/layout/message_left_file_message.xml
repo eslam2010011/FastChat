@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <com.app.adprogressbarlib.AdCircleProgress
+                <com.fastchat.widget.adprogressbarlib.AdCircleProgress
                     android:layout_alignParentEnd="true"
                     android:id="@+id/img_progress_bar"
                     android:layout_width="40dp"
@@ -88,11 +88,11 @@
                     app:adpgb_background_color="@android:color/background_light"
                     app:adpgb_finished_color="@android:color/white"
                     app:adpgb_unfinished_color="@android:color/holo_red_light"
-                    custom:adpgb_finished_stroke_width="5dp"
+                    app:adpgb_finished_stroke_width="5dp"
                     app:adpgb_text_size="9sp"
-                    custom:adpgb_show_text="true"
+                    app:adpgb_show_text="true"
                     app:adpgb_text_color="@android:color/holo_red_light"
-                    custom:adpgb_unfinished_stroke_width="5dp" />
+                    app:adpgb_unfinished_stroke_width="5dp" />
 
 
 
