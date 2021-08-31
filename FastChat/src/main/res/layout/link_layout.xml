@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="5dp"
+    android:background="@drawable/shape_black_line_reply"
+    android:id="@+id/rich_link_card"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/rich_link_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <LinearLayout
+        android:padding="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/rich_link_title"
+            android:textColor="@color/darkModeBackground"
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Data"/>
+
+        <TextView
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:id="@+id/rich_link_desp"
+            android:textColor="@color/darkModeBackground"
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Data"/>
+
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/rich_link_url"
+            android:textColor="@color/darkModeBackground"
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Data"/>
+
+    </LinearLayout>
+</LinearLayout>

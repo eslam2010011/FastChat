@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="rectangle" translatable="false">rectangle</string>
+    <string name="adjust_viewbound_not_supported" translatable="false">adjustViewBounds not supported.</string>
+    <string name="scale_type_not_supported" translatable="false">ScaleType %1$s not supported.</string>
+    <string name="app_name" translatable="false">EVV7</string>
+
+    <string name="slide_to_cancel" translatable="false">"Slide to cancel"</string>
+
+    <string name="app_info" translatable="false">"A WhatsApp style audio recording view to send voice notes in chat.\nHold the Mic to record, then slide left to cancel or swipe up to Lock and record.\n\nCredit:\nVarun John\nhttps://github.com/varunjohn\nvarunjohn1990@gmail.com"</string>
+
+    <string name="type_a_message" translatable="false">Type a message</string>
+    <string name="user_avatar" translatable="false">user_avatar</string>
+
+    <bool name="is_right_to_left">false</bool>
+
+    <string name="incoming_call" translatable="false">Incoming Call</string>
+
+    <string name="outgoing" translatable="false">Outgoing</string>
+
+    <string name="incoming" translatable="false">Incoming</string>
+
+    <string name="video_call" translatable="false">Video Call</string>
+
+    <string name="audio_call" translatable="false">Audio Call</string>
+
+    <string name="history" translatable="false">History</string>
+
+    <string name="all" translatable="false">All</string>
+
+    <string name="missed" translatable="false">Missed</string>
+
+    <string name="new_call" translatable="false">New Call</string>
+
+    <string name="incoming_audio_call" translatable="false">Incoming Audio Call</string>
+
+    <string name="incoming_video_call" translatable="false">Incoming Video Call</string>
+
+    <string name="missed_call" translatable="false">Missed</string>
+
+    <string name="rejected_call" translatable="false">Rejected</string>
+    <string name="message" translatable="false">message</string>
+    <string name="custom_message" translatable="false">Custom Message not supported</string>
+
+
+    <string name="typing" translatable="false">typing...</string>
+
+    <string name="recording" translatable="false">recording...</string>
+</resources>

@@ -1,0 +1,4 @@
+include ':FastPermissions'
+include ':FastChat'
+include ':app'
+rootProject.name = "Chat"

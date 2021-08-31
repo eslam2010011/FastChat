@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rl_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.fastchat.widget.Avatar
+            android:id="@+id/iv_user"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignTop="@+id/cv_image_message_container"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/iv_user"
+            android:textSize="12sp"
+            tools:text="Eslam Mostafa" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/tv_user"
+            android:layout_toEndOf="@id/iv_user"
+            android:id="@+id/cv_image_message_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            android:layout_margin="10dp">
+
+
+            <RelativeLayout
+                android:id="@+id/cv_message_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.fastchat.widget.exo.ExoVideoView
+                    android:id="@+id/player"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp" />
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/playBtn"
+                    android:layout_centerInParent="true"
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RelativeLayout_Reaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reply_txt_message"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone"
+
+                android:layout_marginBottom="5dp"
+                android:gravity="start"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RecyclerView_Reaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_reactions"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/sb_view_emoji_reaction_component" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:visibility="gone"
+                 android:gravity="center"
+                android:background="@drawable/shape_black_line"
+                android:layout_gravity="bottom|start"
+                android:layout_width="30dp"
+                android:layout_height="25dp">
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="15dp"
+                    android:id="@+id/Reaction"
+                    android:layout_margin="5dp"
+                    tools:src="@drawable/ic_fb_love"
+                    android:layout_height="15dp"/>
+            </RelativeLayout>
+            <com.app.adprogressbarlib.AdCircleProgress
+                android:id="@+id/img_progress_bar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                app:adpgb_background_color="@android:color/background_light"
+                android:backgroundTintMode="add"
+                app:adpgb_finished_color="@android:color/white"
+                app:adpgb_unfinished_color="@android:color/holo_red_light"
+                custom:adpgb_finished_stroke_width="5dp"
+                app:adpgb_text_size="12dp"
+                custom:adpgb_show_text="true"
+                app:adpgb_text_color="@android:color/holo_red_light"
+                custom:adpgb_unfinished_stroke_width="5dp" />
+
+
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_alignStart="@+id/cv_image_message_container"
+            android:layout_below="@+id/cv_image_message_container"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:id="@+id/reply_avatar_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                android:id="@+id/thread_reply_count"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                tools:text="2 replies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:layout_alignStart="@+id/cv_image_message_container"
+            android:layout_below="@+id/cv_image_message_container"
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="11:00 PM"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+             android:layout_gravity="center"
+            android:layout_toRightOf="@id/cv_image_message_container"
+            android:textColor="@color/secondaryTextColor"
+            android:textStyle="bold"
+            tools:visibility="visible"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

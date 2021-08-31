@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+    <com.fastchat.widget.Avatar
+        android:layout_width="24dp"
+        android:id="@+id/iv_user"
+        tools:src="@tools:sample/avatars"
+        android:layout_alignTop="@id/cv_message_container"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_height="24dp"/>
+    <TextView
+        android:id="@+id/tv_user"
+        tools:text="Iron Man"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/iv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_below="@+id/tv_user"
+        android:id="@+id/cv_message_container"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/iv_user"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/cc_message_bubble_left"
+        android:layout_marginStart="4dp"
+        android:padding="8dp"
+        android:layout_marginBottom="1dp">
+<!--        <ImageView-->
+<!--            android:id="@+id/playBtn"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:src="@drawable/ic_play_arrow_black_24dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/fileContainer"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/fileContainer"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/fileContainer"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/fileContainer"-->
+<!--            android:alpha="0.8"/>-->
+
+<!--        <SeekBar-->
+<!--            android:minWidth="100dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:id="@+id/audioSeekBar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_toRightOf="@+id/playBtn"-->
+<!--            android:layout_toLeftOf="@+id/audioLength"-->
+<!--            android:alpha="0.8"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/audioLength"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:textColor="@color/primaryTextColor"-->
+<!--            android:textSize="12sp"-->
+<!--            android:layout_marginRight="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            tools:text="00:00"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_alignParentEnd="true"/>-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/download_audio_layout"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progressBar"-->
+<!--                style="?android:attr/progressBarStyle"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:visibility="visible" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/download"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:padding="4dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:src="@drawable/ic_file_download"-->
+<!--                android:visibility="visible" />-->
+
+<!--        </RelativeLayout>-->
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/control_toggle"
+            android:id="@+id/paddedLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+            <ProgressBar
+                android:visibility="gone"
+                android:clickable="true"
+                android:id="@+id/pb_play"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:focusable="true" />
+
+            <LinearLayout
+                 android:id="@+id/containerLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.fastchat.widget.AudioVisualizer.audio.AudioWaveSeekBar
+                    android:id="@+id/seekBar"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_height="30dp"
+                    />
+                <RelativeLayout
+                    android:visibility="gone"
+                     android:id="@+id/RelativeLayout_Reaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_below="@+id/reply_txt_message"
+                    android:gravity="start"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/RecyclerView_Reaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_reactions"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/sb_view_emoji_reaction_component" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/progressBar"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <com.fastchat.widget.AudioVisualizer.audio.AnimatingToggle
+            android:id="@+id/control_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            >
+            <ImageView
+                android:id="@+id/playBtn"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                android:background="@drawable/ic_circle_grey_32dp"
+                android:src="@drawable/ic_play_arrow_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/pause"
+                android:background="@drawable/ic_circle_grey_32dp"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_pause_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </com.fastchat.widget.AudioVisualizer.audio.AnimatingToggle>
+
+
+
+        <TextView
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTime"
+            android:padding="1dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:textSize="10sp"
+            android:text="00:00:00 / 00:00:00"
+            android:layout_marginRight="16dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/cv_message_container"
+        android:layout_alignStart="@+id/cv_message_container"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:id="@+id/reply_avatar_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:clickable="true"
+            android:foreground="?selectableItemBackground"
+            android:id="@+id/thread_reply_count"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            tools:text="2 replies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <com.app.adprogressbarlib.AdCircleProgress
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/img_progress_bar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        app:adpgb_background_color="@android:color/background_light"
+        android:backgroundTintMode="add"
+        app:adpgb_finished_color="@android:color/white"
+        app:adpgb_unfinished_color="@android:color/holo_red_light"
+        custom:adpgb_finished_stroke_width="5dp"
+        app:adpgb_text_size="9sp"
+        custom:adpgb_show_text="true"
+        app:adpgb_text_color="@android:color/holo_red_light"
+        custom:adpgb_unfinished_stroke_width="5dp" />
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="11:00 PM"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="12sp"
+        android:layout_alignBottom="@id/cv_message_container"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@id/cv_message_container"
+        android:textColor="@color/secondaryTextColor"
+        android:textStyle="bold"
+        tools:visibility="visible"
+        android:visibility="gone" />
+    <RelativeLayout
+        android:visibility="gone"
+         android:layout_below="@+id/cv_message_container"
+         android:gravity="center"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/shape_black_line"
+        android:layout_gravity="bottom|start"
+        android:layout_width="30dp"
+        android:layout_height="25dp">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="15dp"
+            android:id="@+id/Reaction"
+            android:layout_margin="5dp"
+            tools:src="@drawable/ic_fb_love"
+            android:layout_height="15dp"/>
+    </RelativeLayout>
+</RelativeLayout>

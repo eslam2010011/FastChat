@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+
+    implementation 'androidx.emoji:emoji-appcompat:1.1.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+    //implementation 'com.facebook.shimmer:shimmer:0.4.0'
+    //firebase
+    implementation 'com.google.firebase:firebase-firestore:23.0.3'
+    implementation 'com.google.firebase:firebase-storage:19.2.2'
+    implementation 'com.google.firebase:firebase-database:20.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:6.3.0'
+
+
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-java:3.2.6'
+
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:3.2.6'
+
+    implementation 'com.github.dueeeke.dkplayer:player-exo:3.2.6'
+
+    implementation 'com.github.dueeeke.dkplayer:videocache:3.2.6'
+
+    implementation 'com.github.Adilhusen:circle-progress-ad-android-:1.0'
+    implementation  'com.fxn769:pix:1.5.3'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+
+    //implementation "com.github.pgreze:android-reactions:1.4"
+    implementation 'com.vanniktech:emoji-twitter:0.7.0'
+    implementation project(path: ':FastPermissions')
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

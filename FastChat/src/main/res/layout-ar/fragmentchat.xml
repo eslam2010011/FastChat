@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutchat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_weight="0.5"
+        android:background="@drawable/ic_background">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_arrow_back" />
+
+        <com.fastchat.widget.Avatar
+            android:id="@+id/iv_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@id/cv_message_container"
+            android:layout_gravity="center"
+             android:layout_marginTop="5dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/iv_user"
+                android:singleLine="true"
+                android:text="Eslam Mostafa Mohemd "
+                android:textColor="@color/primaryTextColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                 android:id="@+id/tv_tiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/iv_user"
+                android:text="Active 2 hours ago"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/typing"
+                 android:visibility="gone"
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/iv_user"
+                android:text="Active 2 hours ago"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/voice_call"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_phone" />
+
+            <ImageView
+                android:id="@+id/video_call"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_videochat" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_information"
+                android:gravity="center"
+                android:text="i"
+                android:textColor="@color/textColorWhite"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/textColorWhite"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_weight="1"
+            android:id="@+id/recyclerViewMessages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="5dp"
+            tools:listitem="@layout/right_reply_message_item"
+            android:background="@color/textColorWhite"
+            android:scrollbars="none" />
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/LinearLayoutTyping"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+              android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <com.fastchat.widget.typing.TypingIndicatorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                app:animateFrequency="700"
+                app:animationOrder="lastOneFirst"
+                app:backgroundColor="#eaeaea"
+                app:backgroundType="rounded"
+                app:dotAnimationDuration="600"
+                app:dotAnimationType="BouncingSliding"
+                app:dotColor="#a4a4a4"
+                app:dotCount="3"
+                app:dotHorizontalSpacing="4dp"
+                app:dotMaxCompressRatio="70%"
+                app:dotSecondColor="#6ba4a4a4"
+                app:dotSize="10dp"
+                app:showBackground="true"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.fastchat.widget.ComposeBox
+        android:id="@+id/labeled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+    </com.fastchat.widget.ComposeBox>
+
+
+</LinearLayout>
