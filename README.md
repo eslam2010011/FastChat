@@ -62,16 +62,7 @@ public class BaseApplication extends MultiDexApplication {
            uiConfig.setButtonVideo(true);
     ```
     
-   ```java
-        . Show or hide the voice button from entering the chat
-           uiConfig.setButtonVoice(true);
-    ```
-    
-    
-         ```java
-              . Show or hide the info button from entering the chat
-           uiConfig.setInfoView(true);
-            ```
+   
 
 
 
