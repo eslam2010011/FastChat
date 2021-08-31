@@ -43,13 +43,13 @@ public class BaseApplication extends MultiDexApplication {
         //
          UiConfig uiConfig = new UiConfig();
          
-         //Show or hide the video button from entering the chat
+         //Show or hide the video button 
         uiConfig.setButtonVideo(true);
         
-        //Show or hide the voice button from entering the chat
+        //Show or hide the voice button 
         uiConfig.setButtonVoice(true);
         
-       //Show or hide the info button from entering the chat
+       //Show or hide the info button 
         uiConfig.setInfoView(true);
         
         uiConfig.setBottomView(true);
@@ -62,7 +62,7 @@ public class BaseApplication extends MultiDexApplication {
          //default reaction
           uiConfig.setReactions(Reaction.getReactions());
 
-         // To add more reaction 
+         // add more reaction 
         //url_reaction  this link image (go to https://emojipedia.org/facebook/   and copy link any reaction image and pass to url_reaction  )
          //Key_reaction this Sting key unique 
          List<Reaction> list=new ArrayList<>();
