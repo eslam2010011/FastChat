@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'maven-publish'
-group = 'com.fastchat'
+ group = 'com.fastchat'
 
 
 android {
@@ -22,6 +22,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+    }
+}
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+
+    }
+//    configurations {
+//        all*.exclude group: 'io.github.manneohlund'
+//    }
 }
 
 dependencies {
@@ -74,4 +93,3 @@ dependencies {
     api project(path: ':FastPermissions')
 
 }
-apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
