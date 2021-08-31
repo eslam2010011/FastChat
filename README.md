@@ -61,8 +61,5 @@ public class BaseApplication extends MultiDexApplication {
           . Show or hide the video button from entering the chat
            uiConfig.setButtonVideo(true);
     ```
-    
-   
-
 
 
