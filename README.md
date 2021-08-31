@@ -14,6 +14,7 @@
 - Text messages
 - File Messages
 - Reaction 
+- Typing
 
 ## Benefits
  - Hassle free coding
