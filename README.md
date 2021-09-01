@@ -120,3 +120,57 @@ Step 4 : Create First conversation .
 
 
 
+Step 5 : How to send notifications  
+```java
+
+public class NotificationContractorX implements NotificationContractor {
+
+
+    public void postNotification(BaseMessage baseMessage,String contents, String type,String text,String name,String token) {
+
+        try {
+//,"
+//                            + "'headings': { 'en':'"+ contents+"'},"+"large_icon :'"+ ""+"'"+" }
+//+",'type':'"+type+"'"+"
+            OneSignal.postNotification(new JSONObject("{'contents': {'en':'" + contents + "'}," +
+                            " 'include_player_ids': ['" + token + "'], 'data' : { 'userId':'"
+                            +baseMessage.getUserId()+"'"+",'type':'"+type+"'"+",'receiverId':'"+baseMessage.getReceiverId()+"'"+",'typeCall':'"+type+"'"+",'name':'"+name+"'"+"},"
+                            + "'headings': { 'en':'"+ contents+"'},"+"large_icon :'"+ ""+"'"+" }"),
+                    new OneSignal.PostNotificationResponseHandler() {
+                        @Override
+                        public void onSuccess(JSONObject response) {
+                            Log.d("Jsonjay","got it");
+                        }
+
+                        @Override
+                        public void onFailure(JSONObject response) {
+                            Log.d("Jsonjay", response.toString());
+                        }
+                    });
+        } catch (JSONException e) {
+            Log.d("Jsonjay", e.getMessage());
+        }
+    }
+
+
+    @Override
+    public void sendNotification(String tokenfcm, User user, BaseMessage baseMessage) {
+        //Log.e("tokenfcm",tokenfcm);
+        if (baseMessage instanceof TextMessage){
+            TextMessage textMessage= (TextMessage) baseMessage;
+            postNotification(textMessage,textMessage.getText(),textMessage.getCategory(),textMessage.getText(),user.getUserName(),tokenfcm);
+        }else if (baseMessage instanceof MediaMessage){
+            MediaMessage mediaMessage= (MediaMessage) baseMessage;
+            postNotification(mediaMessage,mediaMessage.getType(),mediaMessage.getCategory(),null,user.getUserName(),tokenfcm);
+        }
+        else if (baseMessage instanceof Call){
+            Call mediaMessage= (Call) baseMessage;
+            postNotification(mediaMessage,mediaMessage.getType(),mediaMessage.getCategory(),mediaMessage.getType(),user.getUserName(),tokenfcm);
+        }
+    }
+}
+
+```
+
+
+
