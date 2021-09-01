@@ -45,13 +45,22 @@ public class BaseApplication extends MultiDexApplication {
          UiConfig uiConfig = new UiConfig();
          
          //Show or hide the video button 
+         //dufault:true
         uiConfig.setButtonVideo(true);
         
         //Show or hide the voice button 
+        //dufault:true
         uiConfig.setButtonVoice(true);
         
        //Show or hide the info button 
+       //dufault:true
         uiConfig.setInfoView(true);
+        dufault
+       
+       //Upload videos
+       //dufault:false
+       uiConfig.setIncludeVideo(true);
+
                 
         //Change all button colors
         uiConfig.setColorGeneral("#3D51FE");
@@ -89,7 +98,7 @@ Step 2 : Create User.
 
 Step 3 : Get Conversation.
 ```java
-   //pass user id in conversation fragment to get conversations this uer
+   //pass user id in conversation fragment to get conversations this user
        FastChat.showConversationFragment("user_id");
        -like
        //getSupportFragmentManager().beginTransaction().replace(R.id.layout, FastChat.showConversationFragment("2")).commit();
@@ -99,7 +108,7 @@ Step 3 : Get Conversation.
 Step 4 : Create First conversation .
 ```java
    //pass userId and receiverId and put groupId if this first conversation
- FastChat.showChatActivity(view.getContext(), userId, key, baseMessage.getGroupId());
+ FastChat.showChatActivity(view.getContext(), "userId", "receiverId", null);
 ```
 
 
