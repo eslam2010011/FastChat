@@ -1,5 +1,7 @@
 package com.fastchat.Core;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -150,6 +152,9 @@ public class UiConfig {
             void onVideo(User user, BaseMessage baseMessage);
 
             void onVoice(User user, BaseMessage baseMessage);
+
+
+            void info(View view);
 
         }
 

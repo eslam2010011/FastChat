@@ -41,6 +41,7 @@
                     android:layout_toEndOf="@id/av_user"
                     android:layout_height="wrap_content"
                     tools:text="@tools:sample/full_names"
+                    android:textColor="@color/textColorBlack"
                     android:layout_marginEnd="16dp"
                     android:textSize="@dimen/name"
                     android:maxLines="1"
@@ -57,6 +58,7 @@
                     android:layout_below="@id/txt_user_name"
                     android:layout_toEndOf="@id/av_user"
                     android:maxLines="1"
+                    android:textColor="@color/secondaryTextColor"
                     android:layout_marginRight="8dp"
                     android:layout_toStartOf="@+id/messageTime"
                     tools:text="online"
@@ -81,6 +83,7 @@
                     android:textSize="12sp"
                     android:layout_alignTop="@id/txt_user_name"
                     tools:text="11:50"
+                    android:textColor="@color/secondaryTextColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <com.fastchat.widget.BadgeCount

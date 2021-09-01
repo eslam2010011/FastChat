@@ -203,9 +203,52 @@ public class fragmentChat extends Fragment {
                 getActivity().finish();
             }
         });
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (FastChat.getUiConfig().getOnChatListener() != null) {
+                    FastChat.getUiConfig().getOnChatListener().info(v);
+                }
+
+            }
+        });
         video_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Utils.hasPermissions(getActivity(), new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA})) {
+                    FastChat.getFastChat().getChatInteract().sendMessageCall(groupId, FastChatConstants.MESSAGE_TYPE_VIDEO, receiverId, userId, new Chat.CallbackListener() {
+                              @Override
+                              public void onSuccess(BaseMessage textMessage) {
+                                    MediaUtils.playSendSound(getActivity(), R.raw.outgoing_message);
+                                    SendNotification(receiverId, (Call) textMessage);
+                                    DatabaseReference databaseReference = FastChat.getFastChat().getChatInteract().getUser(receiverId);
+                                    ValueEventListener valueEventListener = new ValueEventListener() {
+                                      @Override
+                                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                           User user1 = snapshot.getValue(User.class);
+                                            if ((user1 != null ? user1.getUserName() : null) != null) {
+                                                 if (FastChat.getUiConfig().getOnChatListener() != null) {
+                                                  FastChat.getUiConfig().getOnChatListener().onVideo(user1, (Call) textMessage);
+                                               }
+
+                                            }
+                                        }
+                                                                               @Override
+                                     public void onCancelled(@NonNull DatabaseError error) {
+
+                                       }
+                                    };
+                                   databaseReference.addListenerForSingleValueEvent(valueEventListener);
+                                }
+                           });
+
+
+                }else {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        ( getActivity()).requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA},
+                                30);
+                    }
+                }
 //                FastPermissions.with(getActivity())
 //                        .request(Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA)
 //                        .ifNecessary()
@@ -250,6 +293,41 @@ public class fragmentChat extends Fragment {
         voice_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (Utils.hasPermissions(getActivity(), new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE})) {
+                    FastChat.getFastChat().getChatInteract().sendMessageCall(groupId, FastChatConstants.MESSAGE_TYPE_VIDEO, receiverId, userId, new Chat.CallbackListener() {
+                        @Override
+                        public void onSuccess(BaseMessage textMessage) {
+                            MediaUtils.playSendSound(getActivity(), R.raw.outgoing_message);
+                            SendNotification(receiverId, (Call) textMessage);
+                            DatabaseReference databaseReference = FastChat.getFastChat().getChatInteract().getUser(receiverId);
+                            ValueEventListener valueEventListener = new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    User user1 = snapshot.getValue(User.class);
+                                    if ((user1 != null ? user1.getUserName() : null) != null) {
+                                        if (FastChat.getUiConfig().getOnChatListener() != null) {
+                                            FastChat.getUiConfig().getOnChatListener().onVoice(user1, (Call) textMessage);
+                                        }
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            };
+                            databaseReference.addListenerForSingleValueEvent(valueEventListener);
+                        }
+                    });
+
+
+                }else {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        ( getActivity()).requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                30);
+                    }
+                }
 //                FastPermissions.with(getActivity())
 //                        .request(Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA)
 //                        .ifNecessary()

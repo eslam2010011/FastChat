@@ -127,6 +127,7 @@
             android:layout_marginBottom="8dp"
             android:gravity="center_vertical"
             android:textSize="12sp"
+            android:textColor="@color/secondaryTextColor"
             android:textStyle="bold"
             android:visibility="gone"
             tools:text="11:00 PM"

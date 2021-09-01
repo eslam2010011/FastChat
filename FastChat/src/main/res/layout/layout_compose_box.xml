@@ -153,6 +153,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:ems="10"
+                     android:textColor="@color/textColorBlack"
                     android:hint="@string/type_a_message"
                     android:inputType="textMultiLine"
                     android:maxLines="6"
