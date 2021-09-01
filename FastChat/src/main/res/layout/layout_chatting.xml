@@ -39,7 +39,7 @@
             tools:text="Eslam Mostafa Mohemd"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="@color/textColorBlack"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/iv_user"

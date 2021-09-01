@@ -225,7 +225,7 @@ public class Avatar extends AppCompatImageView {
         cornerRadius = (int) Utils.dpToPixel(2, getResources());
 
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(getResources().getColor(R.color.colorPrimary));
+        paint.setColor(getResources().getColor(R.color.GPrimary));
         textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         textPaint.setTextSize(16f * getResources().getDisplayMetrics().scaledDensity);
         textPaint.setColor(Color.WHITE);

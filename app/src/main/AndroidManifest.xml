@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         >
         <activity android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

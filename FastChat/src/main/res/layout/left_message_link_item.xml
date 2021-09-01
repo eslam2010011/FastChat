@@ -82,7 +82,7 @@
                         android:focusableInTouchMode="true"
                         android:maxWidth="250dp"
                         android:padding="10dp"
-                        android:textColor="@color/primaryTextColor"
+                        android:textColor="@color/textColorBlack"
                         tools:text="message" />
                 </LinearLayout>
 

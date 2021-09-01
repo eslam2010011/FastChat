@@ -791,7 +791,7 @@ public class MessageAdapter2 extends FirebaseRecyclerAdapter<BaseMessage, Recycl
         if (Utils.isDarkMode(context))
             viewHolder.textView.setTextColor(context.getResources().getColor(R.color.textColorWhite));
         else
-            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.primaryTextColor));
+            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.textColorBlack));
         if (baseMessage instanceof Action)
             viewHolder.textView.setText(((Action) baseMessage).getMessage());
         else if (baseMessage instanceof Call) {
@@ -958,7 +958,7 @@ public class MessageAdapter2 extends FirebaseRecyclerAdapter<BaseMessage, Recycl
                     viewHolder.txtMessage.setTextColor(context.getResources().getColor(R.color.textColorWhite));
                 } else {
                     PatternUtils.setHyperLinkSupport(context, viewHolder.txtMessage, R.color.textColorWhite);
-                    viewHolder.txtMessage.setTextColor(context.getResources().getColor(R.color.primaryTextColor));
+                    viewHolder.txtMessage.setTextColor(context.getResources().getColor(R.color.textColorBlack));
 
                 }
 
@@ -1082,7 +1082,7 @@ public class MessageAdapter2 extends FirebaseRecyclerAdapter<BaseMessage, Recycl
                     viewHolder.txtMessage.setTextColor(context.getResources().getColor(R.color.textColorWhite));
                 } else {
                     PatternUtils.setHyperLinkSupport(context, viewHolder.txtMessage, R.color.textColorWhite);
-                    viewHolder.txtMessage.setTextColor(context.getResources().getColor(R.color.primaryTextColor));
+                    viewHolder.txtMessage.setTextColor(context.getResources().getColor(R.color.textColorBlack));
 
                 }
 

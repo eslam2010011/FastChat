@@ -30,7 +30,7 @@
 
     <application>
         <activity android:name=".Ui.Chat.ChatActivity"
-            android:theme="@style/Theme.AppCompat"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             />
     </application>
 </manifest>

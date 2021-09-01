@@ -8,6 +8,11 @@
 
     <color name="primaryTextColor">#000000</color>
 
+    <color name="GPrimary">#3D51FE</color>
+
+
+    <color name="textColorBlack">#000000</color>
+
     <color name="textColorWhite">#FFFFFF</color>
 
     <color name="bottom">#FAFAFA</color>
