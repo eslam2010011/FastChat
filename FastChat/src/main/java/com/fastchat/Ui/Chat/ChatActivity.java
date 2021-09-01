@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fastchat.Core.FastChat;
 import com.fastchat.R;
-import com.fastpermissions.Permissions.FastPermissions;
 
 public class ChatActivity extends AppCompatActivity {
     fragmentChat fragment = new fragmentChat();
@@ -55,7 +54,7 @@ public class ChatActivity extends AppCompatActivity {
     @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        FastPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+       // FastPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
     }
 
 }
