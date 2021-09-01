@@ -23,12 +23,15 @@
 
 # Screenshots
 
-
+ ![stack Overflow](blob:https://web.whatsapp.com/5f9a7dd9-8cae-4a5e-837e-5c5683892e83)
+ ![stack Overflow](https://firebasestorage.googleapis.com/v0/b/opayapp-1135d.appspot.com/o/8272a997-5658-4a9b-9829-672e0b3ba705.jfif?alt=media&token=c347e497-f581-4591-a79b-a48a2751b175)
 
 # Installation
 
+```
+    implementation 'com.github.eslam2010011:FastChat:v2.4'
 
-
+```
 
 
 # Usage
