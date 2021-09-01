@@ -90,6 +90,6 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
 
     //implementation "com.github.pgreze:android-reactions:1.4"
-    api project(path: ':FastPermissions')
+    implementation project(path: ':FastPermissions')
 
 }
